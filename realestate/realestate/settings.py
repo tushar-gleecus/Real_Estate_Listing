@@ -20,8 +20,8 @@ DEBUG = os.environ.get("DJANGO_DEBUG", "False") == "True"
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "*").split(",")
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")
+    "default": dj_database_url.parse(
+        os.environ.get("DATABASE_URL", "postgresql://postgres:nNXBOZQpdpBRcwKybNauTcWhVTqffRTT@nozomi.proxy.rlwy.net:30749/railway")
     )
 }
 
